@@ -23,7 +23,7 @@
         <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
         <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
         <!-- Java -->
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <maven.compiler.version>3.6.2</maven.compiler.version>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
         <!-- Maven. integration test -->
@@ -37,9 +37,9 @@
     </properties>
 
     <modules>
-        <module>application</module>
-        <module>adapters</module>
-        <module>domain</module>
+        <module>restaurant</module>
+        <module>usuari</module>
+        <module>back</module>
     </modules>
 
     <dependencies>
