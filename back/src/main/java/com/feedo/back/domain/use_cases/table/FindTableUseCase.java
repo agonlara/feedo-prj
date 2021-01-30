@@ -2,8 +2,8 @@ package com.feedo.back.domain.use_cases.table;
 
 import com.feedo.back.domain.model.Table;
 
-public interface ReadTableUseCase {
+public interface FindTableUseCase {
 
-    Table readTableById(String tableId);
+    Table findTableById(String tableId);
 
 }

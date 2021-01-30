@@ -5,10 +5,10 @@ import com.feedo.back.domain.model.Restaurant;
 
 import java.util.stream.Stream;
 
-public interface ReadCommandsUseCase {
+public interface FindCommandsUseCase {
 
-    Stream<Command> readCommandsInProcess(Restaurant restaurant);
+    Stream<Command> findCommandsInProcess(Restaurant restaurant);
 
-    Stream<Command> readDeliveredCommands(Restaurant restaurant);
+    Stream<Command> findDeliveredCommands(Restaurant restaurant);
 
 }

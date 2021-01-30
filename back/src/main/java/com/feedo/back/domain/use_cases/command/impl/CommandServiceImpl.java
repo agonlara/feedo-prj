@@ -5,13 +5,13 @@ import com.feedo.back.domain.model.Restaurant;
 import com.feedo.back.domain.ports.CommandPersistencePort;
 import com.feedo.back.domain.use_cases.command.CreateCommandUseCase;
 import com.feedo.back.domain.use_cases.command.DeliverCommandUseCase;
-import com.feedo.back.domain.use_cases.command.ReadCommandsUseCase;
+import com.feedo.back.domain.use_cases.command.FindCommandsUseCase;
 import lombok.AllArgsConstructor;
 
 import java.util.stream.Stream;
 
 @AllArgsConstructor
-public class CommandServiceImpl implements ReadCommandsUseCase, CreateCommandUseCase, DeliverCommandUseCase {
+public class CommandServiceImpl implements FindCommandsUseCase, CreateCommandUseCase, DeliverCommandUseCase {
 
     private final CommandPersistencePort commandPersistence;
 
@@ -22,21 +22,21 @@ public class CommandServiceImpl implements ReadCommandsUseCase, CreateCommandUse
 
     @Override
     public Command deliver(String id) {
-        Command command = commandPersistence.readById(id)
+        Command command = commandPersistence.findById(id)
                 .orElseThrow(() -> new CommandNotFoundException(id));
         command.deliver();
         return commandPersistence.update(command);
     }
 
     @Override
-    public Stream<Command> readCommandsInProcess(Restaurant restaurant) {
-        return commandPersistence.readByRestaurantId(restaurant.getId())
+    public Stream<Command> findCommandsInProcess(Restaurant restaurant) {
+        return commandPersistence.findByRestaurantId(restaurant.getId())
                 .filter(command -> !command.isDeliverd());
     }
 
     @Override
-    public Stream<Command> readDeliveredCommands(Restaurant restaurant) {
-        return commandPersistence.readByRestaurantId(restaurant.getId())
+    public Stream<Command> findDeliveredCommands(Restaurant restaurant) {
+        return commandPersistence.findByRestaurantId(restaurant.getId())
                 .filter(Command::isDeliverd);
     }
 
