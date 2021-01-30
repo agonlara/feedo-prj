@@ -22,10 +22,12 @@ public class CommandDocument {
 
     @Id
     private String id;
-    private TableDocument table;
     private LocalDateTime requestDate;
     private LocalDateTime deliveryDate;
     private boolean deliverd;
+
+    @DBRef
+    private TableDocument table;
 
     @DBRef
     private List<ProductDocument> products;

@@ -17,8 +17,8 @@ public class CommandPersistenceMongodbAdapter implements CommandPersistencePort 
     private final CommandRepository commandRepository;
 
     @Override
-    public Stream<Command> findByRestaurantId(String restaurantId) {
-        return commandRepository.findByRestaurantId(restaurantId)
+    public Stream<Command> findByTableId(String tableId) {
+        return commandRepository.findByTableId(tableId)
                 .map(CommandDocument::toCommand);
     }
 

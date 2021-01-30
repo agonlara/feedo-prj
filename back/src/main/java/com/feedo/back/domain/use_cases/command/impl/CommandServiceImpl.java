@@ -2,6 +2,7 @@ package com.feedo.back.domain.use_cases.command.impl;
 
 import com.feedo.back.domain.model.Command;
 import com.feedo.back.domain.model.Restaurant;
+import com.feedo.back.domain.model.Table;
 import com.feedo.back.domain.ports.CommandPersistencePort;
 import com.feedo.back.domain.use_cases.command.CreateCommandUseCase;
 import com.feedo.back.domain.use_cases.command.DeliverCommandUseCase;
@@ -29,14 +30,14 @@ public class CommandServiceImpl implements FindCommandsUseCase, CreateCommandUse
     }
 
     @Override
-    public Stream<Command> findCommandsInProcess(Restaurant restaurant) {
-        return commandPersistence.findByRestaurantId(restaurant.getId())
+    public Stream<Command> findCommandsInProcess(Table table) {
+        return commandPersistence.findByTableId(table.getId())
                 .filter(command -> !command.isDeliverd());
     }
 
     @Override
-    public Stream<Command> findDeliveredCommands(Restaurant restaurant) {
-        return commandPersistence.findByRestaurantId(restaurant.getId())
+    public Stream<Command> findDeliveredCommands(Table table) {
+        return commandPersistence.findByTableId(table.getId())
                 .filter(Command::isDeliverd);
     }
 

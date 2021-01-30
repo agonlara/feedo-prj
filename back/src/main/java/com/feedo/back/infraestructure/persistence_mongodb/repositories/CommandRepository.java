@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public interface CommandRepository extends MongoRepository<CommandDocument, String> {
 
-    Stream<CommandDocument> findByRestaurantId(String restaurantId);
+    Stream<CommandDocument> findByTableId(String tableId);
 
     Optional<CommandDocument> findById(String id);
 

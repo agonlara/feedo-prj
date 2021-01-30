@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public interface CommandPersistencePort {
 
-    Stream<Command> findByRestaurantId(String restaurantId);
+    Stream<Command> findByTableId(String tableId);
 
     Optional<Command> findById(String id);
 
