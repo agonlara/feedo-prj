@@ -7,9 +7,9 @@ import java.util.stream.Stream;
 
 public interface CommandPersistencePort {
 
-    Stream<Command> readByRestaurantId(String restaurantId);
+    Stream<Command> findByRestaurantId(String restaurantId);
 
-    Optional<Command> readById(String id);
+    Optional<Command> findById(String id);
 
     Command create(Command entity);
 

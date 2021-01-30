@@ -7,11 +7,11 @@ import java.util.stream.Stream;
 
 public interface TablePersistencePort {
 
-    Stream<Table> readAll();
+    Stream<Table> findAll();
 
-    Stream<Table> readByRestaurantId(String id);
+    Stream<Table> findByRestaurantId(String id);
 
-    Optional<Table> readById(String id);
+    Optional<Table> findById(String id);
 
     Table create(Table entity);
 
