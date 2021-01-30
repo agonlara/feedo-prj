@@ -1,4 +1,4 @@
-package com.feedo.back.domain.use_cases;
+package com.feedo.back.domain.use_cases.command;
 
 import com.feedo.back.domain.model.Command;
 
