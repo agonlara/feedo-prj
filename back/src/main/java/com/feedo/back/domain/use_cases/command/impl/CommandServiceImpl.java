@@ -1,7 +1,6 @@
 package com.feedo.back.domain.use_cases.command.impl;
 
 import com.feedo.back.domain.model.Command;
-import com.feedo.back.domain.model.Restaurant;
 import com.feedo.back.domain.model.Table;
 import com.feedo.back.domain.ports.CommandPersistencePort;
 import com.feedo.back.domain.use_cases.command.CreateCommandUseCase;

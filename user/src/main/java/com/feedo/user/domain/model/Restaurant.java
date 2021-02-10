@@ -4,7 +4,6 @@ import java.util.List;
 import lombok.Getter;
 
 @Getter
-
 public class Restaurant {
 
     private int id;

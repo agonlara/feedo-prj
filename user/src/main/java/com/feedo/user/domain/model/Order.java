@@ -20,11 +20,6 @@ public class Order {
     private List<Product> products;
     private float price = this.getPrice();
 
-
-    public List<Product> checkOrder() {
-        return products;
-    }
-
     private float getPrice () {
         return products.stream().map(Product::getPrice).reduce(0F, Float::sum); //controlar NullPointer
     }

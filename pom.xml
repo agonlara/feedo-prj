@@ -38,7 +38,7 @@
 
     <modules>
         <module>restaurant</module>
-        <module>usuari</module>
+        <module>user</module>
         <module>back</module>
     </modules>
 

@@ -1,5 +1,8 @@
 package com.feedo.back.application;
 
+import com.feedo.back.domain.use_cases.command.CreateCommandUseCase;
+import com.feedo.back.domain.use_cases.command.FindCommandsUseCase;
+import com.feedo.back.domain.use_cases.command.impl.CommandServiceImpl;
 import com.feedo.back.infraestructure.persistence_mongodb.repositories.CommandRepository;
 import com.feedo.back.infraestructure.persistence_mongodb.repositories.TableRepository;
 import org.springframework.boot.SpringApplication;
@@ -14,8 +17,16 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 })
 public class Application {
 
+
+
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+
+        FindCommandsUseCase f1 = new CommandServiceImpl(null);
+        CreateCommandUseCase f2 = new CommandServiceImpl(null);
+        CommandServiceImpl aa = new CommandServiceImpl(null);
+
     }
 
 }
