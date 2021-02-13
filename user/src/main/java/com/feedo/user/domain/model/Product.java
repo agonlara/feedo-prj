@@ -11,7 +11,7 @@ public class Product {
 
     private int id;
     private float price;
-    private boolean availability;
+    private boolean available;
     private String name;
     private List<Tag> tags;
 

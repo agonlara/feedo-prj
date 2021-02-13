@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 
-public class Order {
+public final class Order {
 
     private String id;
     private LocalDateTime requestDate;
@@ -19,6 +19,16 @@ public class Order {
     private int numTable;
     private List<Product> products;
     private float price = this.getPrice();
+
+    //Fem que Order sigui un Singleton
+    private static Order instance;
+    public static Order getInstance() {
+        if (instance == null) {
+            instance = new Order();
+        }
+        return instance;
+    }
+
 
     private float getPrice () {
         return products.stream().map(Product::getPrice).reduce(0F, Float::sum); //controlar NullPointer
